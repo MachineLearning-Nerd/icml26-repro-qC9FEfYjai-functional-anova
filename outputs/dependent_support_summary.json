@@ -1,0 +1,81 @@
+{
+  "dataset": "UCI Car Evaluation",
+  "full_cartesian_support": 1728,
+  "cases": [
+    {
+      "case": "ordered_buying_maintenance",
+      "description": "inequality constraint buying <= maintenance; weights 1+safety",
+      "observations_with_weights": 2160,
+      "unique_support": 1080,
+      "full_cartesian_support": 1728,
+      "support_fraction": 0.625,
+      "removed_states": 648,
+      "total_correlation_nats": 0.2571233586732884,
+      "distinct_probability_values": 3,
+      "min_probability": 0.000462962962962963,
+      "max_probability": 0.001388888888888889,
+      "basis_shape": [
+        1080,
+        1080
+      ],
+      "components": 64,
+      "runtime_seconds": 4.300004032207653,
+      "reconstruction_max_abs_error": 5.79911674236655e-11,
+      "weighted_l2_error": 5.012030429524762e-22,
+      "r_squared": 1.0
+    },
+    {
+      "case": "persons_equals_safety",
+      "description": "deterministic equality persons = safety; weights 1+buying",
+      "observations_with_weights": 1440,
+      "unique_support": 576,
+      "full_cartesian_support": 1728,
+      "support_fraction": 0.3333333333333333,
+      "removed_states": 1152,
+      "total_correlation_nats": 1.0986122886681091,
+      "distinct_probability_values": 4,
+      "min_probability": 0.0006944444444444445,
+      "max_probability": 0.002777777777777778,
+      "basis_shape": [
+        576,
+        576
+      ],
+      "components": 32,
+      "runtime_seconds": 0.3883648100309074,
+      "reconstruction_max_abs_error": 7.604139540262622e-12,
+      "weighted_l2_error": 1.3175437594914903e-23,
+      "r_squared": 1.0
+    },
+    {
+      "case": "modular_door_constraint",
+      "description": "higher-order doors = (buying + maintenance) mod 4; weights 1+persons",
+      "observations_with_weights": 864,
+      "unique_support": 432,
+      "full_cartesian_support": 1728,
+      "support_fraction": 0.25,
+      "removed_states": 1296,
+      "total_correlation_nats": 1.386294361119889,
+      "distinct_probability_values": 3,
+      "min_probability": 0.0011574074074074073,
+      "max_probability": 0.003472222222222222,
+      "basis_shape": [
+        432,
+        432
+      ],
+      "components": 40,
+      "runtime_seconds": 0.20504027791321278,
+      "reconstruction_max_abs_error": 8.358558289955909e-11,
+      "weighted_l2_error": 4.115905272420321e-21,
+      "r_squared": 1.0
+    }
+  ],
+  "number_of_dependence_structures": 3,
+  "minimum_nonrectangular_support": 432,
+  "maximum_nonrectangular_support": 1080,
+  "total_unique_case_states": 2088,
+  "maximum_reconstruction_abs_error": 8.358558289955909e-11,
+  "minimum_total_correlation_nats": 0.2571233586732884,
+  "all_nonrectangular": true,
+  "all_nonuniform": true,
+  "all_exact": true
+}
