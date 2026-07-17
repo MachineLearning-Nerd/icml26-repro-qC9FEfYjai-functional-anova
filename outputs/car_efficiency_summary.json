@@ -1,0 +1,29 @@
+{
+  "dataset": "UCI Car Evaluation",
+  "dataset_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data",
+  "dataset_sha256": "b703a9ac69f11e64ce8c223c0a40de4d2e9d769f7fb20be5f8f2e8a619893d83",
+  "rows": 1728,
+  "features": 6,
+  "classes": 4,
+  "cardinalities": [
+    4,
+    4,
+    4,
+    3,
+    3,
+    3
+  ],
+  "full_support_size": 1728,
+  "exact_output_explanations": 6912,
+  "kernel_output_explanations": 1000,
+  "kernel_background_points": 200,
+  "exact_total_seconds": 3.794034064048901,
+  "kernel_total_seconds": 70.95881283003837,
+  "exact_explanations_per_second": 1821.8075756082383,
+  "kernel_explanations_per_second": 14.092682221096558,
+  "throughput_ratio_exact_over_kernel": 129.27330276993095,
+  "wall_time_ratio_kernel_over_exact": 18.702734775742325,
+  "max_reconstruction_abs_error": 2.842170943040401e-14,
+  "mean_shapley_squared_difference": 0.005328640378097212,
+  "claim_2_full_scale": "verified"
+}
