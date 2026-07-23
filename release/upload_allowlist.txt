@@ -1,0 +1,8 @@
+logbook.json
+pages/campaign-claim-1/page.md
+pages/campaign-claim-2/page.md
+pages/campaign-claim-3/page.md
+pages/campaign-claim-4/page.md
+pages/campaign-claim-5/page.md
+pages/campaign-claim-6/page.md
+pages/campaign-release-evidence/page.md

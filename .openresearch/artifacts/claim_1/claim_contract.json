@@ -1,0 +1,9 @@
+{
+  "claim": "Theorem 3.2 hierarchical orthogonality",
+  "outcomes": [
+    "VERIFIED",
+    "FALSIFIED",
+    "BLOCKED"
+  ],
+  "pass_condition": "For every full-scale Car f_A, proper B subset A, class, and X_B configuration, abs(E[f_A|X_B]) < 1e-10."
+}

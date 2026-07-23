@@ -1,0 +1,13 @@
+{
+  "coalitions_per_state": 64,
+  "data_sha256": "b703a9ac69f11e64ce8c223c0a40de4d2e9d769f7fb20be5f8f2e8a619893d83",
+  "dataset": "UCI Car Evaluation",
+  "empirical_distribution_is_exact_product_uniform": true,
+  "features": 6,
+  "max_abs_equation5_vs_exact_standard_shap": 1.2795320358804929e-14,
+  "max_abs_joint_mass_minus_product_mass": 0.0,
+  "output_classes": 4,
+  "states_checked": 1728,
+  "threshold": 1e-10,
+  "verdict": "VERIFIED"
+}

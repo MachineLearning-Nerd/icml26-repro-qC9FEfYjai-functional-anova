@@ -1,0 +1,14 @@
+{
+  "basis_shape": [1728, 1728],
+  "data_sha256": "b703a9ac69f11e64ce8c223c0a40de4d2e9d769f7fb20be5f8f2e8a619893d83",
+  "dataset": "UCI Car Evaluation full Cartesian domain",
+  "gamma_shape": [1728, 1728],
+  "linear_system_seconds": 1.4951168269617483,
+  "max_abs_gamma_c_minus_mu": 3.552713678800501e-15,
+  "max_abs_reconstruction_error": 6.971853649950788e-15,
+  "output_classes": 4,
+  "states": 1728,
+  "systems_solved": 4,
+  "threshold": 1e-10,
+  "verdict": "VERIFIED"
+}

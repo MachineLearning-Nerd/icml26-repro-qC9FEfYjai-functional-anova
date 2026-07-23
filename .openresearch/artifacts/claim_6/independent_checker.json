@@ -1,0 +1,6 @@
+{
+  "accepted": true,
+  "max_abs_permutation_vs_coalition_reference": 6.217248937900877e-15,
+  "method": "average marginal contributions over all feature permutations",
+  "permutations": 720
+}

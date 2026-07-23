@@ -1,0 +1,9 @@
+{
+  "claim": "Equation (5) exactly recovers standard SHAP for independent inputs",
+  "outcomes": [
+    "VERIFIED",
+    "FALSIFIED",
+    "BLOCKED"
+  ],
+  "pass_condition": "Across all 1728 product-uniform Car states/classes, Equation (5) agrees within 1e-10 with exhaustive standard SHAP."
+}

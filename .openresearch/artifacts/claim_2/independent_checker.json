@@ -1,0 +1,6 @@
+{
+  "accepted": true,
+  "max_abs_direct_reconstruction_error": 2.7519653222896068e-14,
+  "max_abs_gamma_vs_direct_coefficient_difference": 1.2212453270876722e-15,
+  "method": "solve the square full-support basis system Bc=f directly, without forming Gamma or mu"
+}

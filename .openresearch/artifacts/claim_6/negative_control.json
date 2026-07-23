@@ -1,0 +1,5 @@
+{
+  "corruption": "replace each Equation (5) divisor |A| by |A|+1",
+  "max_abs_corrupted_vs_exact_standard_shap": 0.21960218253968078,
+  "verifier_accepted": false
+}

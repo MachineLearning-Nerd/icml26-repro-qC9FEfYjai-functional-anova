@@ -1,0 +1,6 @@
+{
+  "all_weighted_support_metrics_match_original_rows": true,
+  "maximum_mse_abs_difference": 8.326672684688674e-17,
+  "maximum_r2_abs_difference": 1.9984014443252818e-15,
+  "method": "unweighted float64 residuals and variance expanded over all 60000 training rows"
+}

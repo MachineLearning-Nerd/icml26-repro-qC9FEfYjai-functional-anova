@@ -1,0 +1,11 @@
+{
+  "nearby_support": [
+    0,
+    1,
+    8191
+  ],
+  "nearby_support_candidate_evaluations": 2,
+  "nearby_support_independent_count": 2,
+  "tampered_largest_counterexample_count": 2,
+  "verifier_accepted_tampered_result": false
+}

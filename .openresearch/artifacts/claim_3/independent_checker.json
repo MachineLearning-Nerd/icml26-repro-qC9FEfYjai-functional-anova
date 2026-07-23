@@ -1,0 +1,5 @@
+{
+  "all_counts_match_official_instrumentation": true,
+  "fixed_support_cardinality": true,
+  "method": "separate exact rank simulator from the published basis formula"
+}

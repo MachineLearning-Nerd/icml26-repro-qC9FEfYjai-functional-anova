@@ -1,0 +1,104 @@
+{
+  "created_at_utc": "2026-07-23T06:11:11Z",
+  "file_count": 19,
+  "files": [
+    {
+      "bytes": 1519,
+      "path": ".gitattributes",
+      "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+    },
+    {
+      "bytes": 0,
+      "path": ".serve.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 366,
+      "path": "README.md",
+      "sha256": "cfa3d79fa714caa5dcbf38bb0dd00e0eb2bcd64ad513e46e8b73739668918ff1"
+    },
+    {
+      "bytes": 413,
+      "path": "bucket-icon.svg",
+      "sha256": "d1c28fc0a4e07f2688d013f576cf76ffc422d278d56a52a82989e0b93b3b3964"
+    },
+    {
+      "bytes": 1831,
+      "path": "index.html",
+      "sha256": "d6fe756b07b25d8e9ff0d95cf80faaeade9598e0eac6a0c67c06c895af561869"
+    },
+    {
+      "bytes": 29648,
+      "path": "logbook.css",
+      "sha256": "64e1de4358c79ec0d5f2697c56f98258c025e992c94ad7b3b7801739222ca41d"
+    },
+    {
+      "bytes": 77280,
+      "path": "logbook.js",
+      "sha256": "69d73869184f936613668569980f31984be65229e77c4df4ba9604d3de70c02b"
+    },
+    {
+      "bytes": 1672,
+      "path": "logbook.json",
+      "sha256": "66ea36eba6e5ef54ce6a916eee12b52ed912170406e5ee165e12d0ec15bd42a5"
+    },
+    {
+      "bytes": 658,
+      "path": "pages/claim-1-closed-form-decomposition/page.md",
+      "sha256": "959a4612855715e738602026ba483d59c876a5b3f24d93f1a3b8335959adaa30"
+    },
+    {
+      "bytes": 90010,
+      "path": "pages/claim-2-efficient-no-sampling/page.md",
+      "sha256": "e73dbd3fb7c593e459cae59bea2baa894b40e539b14812963836cdada838cf34"
+    },
+    {
+      "bytes": 99965,
+      "path": "pages/claim-3-non-rectangular-dependent-support/page.md",
+      "sha256": "09b814a7b78020c9dbddd7f073569840c917ea9f13c2cda1a1ae4a67444b834c"
+    },
+    {
+      "bytes": 1954,
+      "path": "pages/conclusion/page.md",
+      "sha256": "2ffc8f01cebed8514764a791b0290f49372b6f1fd87b880bb0c940e1755982a4"
+    },
+    {
+      "bytes": 436,
+      "path": "pages/index.md",
+      "sha256": "91a9a35c632067e4ccf49d2e4e6c1e713189b9016378505b39f029fb477cd9c9"
+    },
+    {
+      "bytes": 6028,
+      "path": "pages/methods-environment/page.md",
+      "sha256": "1d0274f2f72c6c4d8217e32790850f8cfac19187ef1b1ef78620a6cd36273ac4"
+    },
+    {
+      "bytes": 1067,
+      "path": "pages/overview/page.md",
+      "sha256": "8a6c67a636a9b477d9e5d3d1aa986cb36f536047e022751676acb89a61bc9c0c"
+    },
+    {
+      "bytes": 388,
+      "path": "style.css",
+      "sha256": "789bfd541c9f06658ac410d968e9c39fa8c63a48a08643b36071b984c699a9f4"
+    },
+    {
+      "bytes": 29998,
+      "path": "trackio-logo-light.png",
+      "sha256": "a6eb72253c0128ce79b526a86b7943eed37beec186b5f57ff6c1701d0e9ff596"
+    },
+    {
+      "bytes": 55555,
+      "path": "trackio-logo.png",
+      "sha256": "3e3792061d4d095759da30d7cfe7f14b621901793cd4d677b61b2896f5bf472b"
+    },
+    {
+      "bytes": 89832,
+      "path": "trackio-wordmark-dark.png",
+      "sha256": "71da94795855710d214801eb9b9b7b8898e9a8757abac0e22966a0531bbb2f4f"
+    }
+  ],
+  "manifest_scope": "All non-cache files downloaded from the exact judged Space revision; immutable protected baseline.",
+  "revision": "6ce8ca3f9b6bd4071976f04c7b105db70e5c5e92",
+  "space_id": "DineshAI/qC9FEfYjai"
+}

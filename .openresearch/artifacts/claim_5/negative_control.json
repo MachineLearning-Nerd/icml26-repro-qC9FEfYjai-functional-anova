@@ -1,0 +1,7 @@
+{
+  "control": "solve the same model responses using only the first 674 basis elements",
+  "mse": [0.039645780205052106, 0.04008370055581392, 0.04081130008963775],
+  "r2": [0.5383704515415622, 0.5395385051723836, 0.5433613458401291],
+  "selected_basis_elements": 674,
+  "verifier_accepted": false
+}

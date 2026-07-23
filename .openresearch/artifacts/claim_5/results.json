@@ -1,0 +1,22 @@
+{
+  "basis_seconds": 7310.102848101989,
+  "dataset": "Binarized MNIST training split",
+  "decomposition_seconds": 7544.241660293075,
+  "dimensions": 784,
+  "mse_mean": 0.0117591009579433,
+  "mse_std": 0.00026162520133934296,
+  "numerical_verdict": "BLOCKED",
+  "r2_mean": 0.8655141213916058,
+  "r2_std": 0.0005297271370780711,
+  "runtime_subclaim_status": "BLOCKED_DIFFERENT_HARDWARE",
+  "seed_runs": [
+    {"seed": 0, "r2": 0.8653349372847792, "mse": 0.011565337391282446},
+    {"seed": 1, "r2": 0.8661102019756419, "mse": 0.01165526028076669},
+    {"seed": 2, "r2": 0.8650972249143962, "mse": 0.012056705201780768}
+  ],
+  "selected_basis_elements": 10000,
+  "target_class": 3,
+  "training_rows": 60000,
+  "unique_support_cardinality": 59984,
+  "verdict": "BLOCKED"
+}

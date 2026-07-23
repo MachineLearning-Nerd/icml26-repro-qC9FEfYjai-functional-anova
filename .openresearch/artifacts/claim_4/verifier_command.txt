@@ -1,0 +1,1 @@
+.venv/bin/python repro/src/verify_mushrooms.py --output .openresearch/artifacts

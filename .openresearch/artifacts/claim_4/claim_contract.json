@@ -1,0 +1,14 @@
+{
+  "claim": "On Mushroom (22 variables, |E| approximately 1e14), the method has R2 approximately 1, MSE approximately 1e-15, in 0.3 seconds.",
+  "falsification_condition": "The faithful protocol and independent residual checker both give MSE >1e-12 for the authors default and seed controls.",
+  "metric_acceptance_interval_for_approximately_1e-15": [
+    1e-16,
+    1e-14
+  ],
+  "outcomes": [
+    "VERIFIED",
+    "FALSIFIED",
+    "BLOCKED"
+  ],
+  "timing_policy": "Report timing but do not use it for the verdict because this machine is not the paper's M4/32GB hardware."
+}

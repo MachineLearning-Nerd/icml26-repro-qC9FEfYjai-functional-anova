@@ -1,0 +1,8 @@
+{
+  "backend": "Hugging Face cpu-upgrade",
+  "cpu_only": true,
+  "evidence_run": "2a6503be-27c7-44d9-a337-dc8ebbcf6661",
+  "git_sha": "d026ba9d422d1d8e1a7e446800352318f3a8d0f0",
+  "python": "3.12.11",
+  "upstream_git_sha": "1c5bbb24329b6fd017ed9923d18145e4b5d4f812"
+}

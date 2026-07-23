@@ -1,0 +1,97 @@
+{
+  "claim_interpretation": "End-to-end Algorithm 1 computation is bounded by O(r^3), independently of the ambient hypergrid size.",
+  "counterexample_family": "One categorical variable with empirical support {M-3, M-2, M-1}; r=3 while |E|=M.",
+  "data_sha256": "b703a9ac69f11e64ce8c223c0a40de4d2e9d769f7fb20be5f8f2e8a619893d83",
+  "reason": "The official greedy loop evaluates exactly M-2 dictionary elements before rank 3, so work is unbounded for fixed r.",
+  "rows": [
+    {
+      "ambient_hypergrid_size": 128,
+      "candidate_evaluations": 126,
+      "coalitions": [
+        [],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "expected_candidate_evaluations": 126,
+      "independent_candidate_evaluations": 126,
+      "matrix_rank": 3,
+      "matrix_shape": [
+        3,
+        3
+      ],
+      "runtime_seconds": 0.007827249995898455,
+      "support_cardinality_r": 3
+    },
+    {
+      "ambient_hypergrid_size": 512,
+      "candidate_evaluations": 510,
+      "coalitions": [
+        [],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "expected_candidate_evaluations": 510,
+      "independent_candidate_evaluations": 510,
+      "matrix_rank": 3,
+      "matrix_shape": [
+        3,
+        3
+      ],
+      "runtime_seconds": 0.009201375010889024,
+      "support_cardinality_r": 3
+    },
+    {
+      "ambient_hypergrid_size": 2048,
+      "candidate_evaluations": 2046,
+      "coalitions": [
+        [],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "expected_candidate_evaluations": 2046,
+      "independent_candidate_evaluations": 2046,
+      "matrix_rank": 3,
+      "matrix_shape": [
+        3,
+        3
+      ],
+      "runtime_seconds": 0.03449200000613928,
+      "support_cardinality_r": 3
+    },
+    {
+      "ambient_hypergrid_size": 8192,
+      "candidate_evaluations": 8190,
+      "coalitions": [
+        [],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "expected_candidate_evaluations": 8190,
+      "independent_candidate_evaluations": 8190,
+      "matrix_rank": 3,
+      "matrix_shape": [
+        3,
+        3
+      ],
+      "runtime_seconds": 0.13801345898536965,
+      "support_cardinality_r": 3
+    }
+  ],
+  "verdict": "FALSIFIED"
+}

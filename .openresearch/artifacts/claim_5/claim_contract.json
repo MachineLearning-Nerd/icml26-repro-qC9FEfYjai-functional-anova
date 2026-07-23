@@ -1,0 +1,7 @@
+{
+  "claim": "On binarized MNIST (784 dimensions), the method achieves R2 = 0.86 in 15 minutes using 10000 basis elements.",
+  "outcomes": ["VERIFIED", "FALSIFIED", "BLOCKED"],
+  "numerical_acceptance": {"r2": [0.855, 0.865], "mse": [0.005, 0.015]},
+  "falsification_margin": "All seeds must be outside [0.845, 0.875) in R2 or outside [0.0025, 0.03) in MSE.",
+  "timing_policy": "Report timing but do not decide the 15-minute subclaim on different hardware."
+}

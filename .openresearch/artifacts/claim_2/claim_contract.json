@@ -1,0 +1,5 @@
+{
+  "claim": "On full support, the exact coefficient vector is obtained from Gamma c(f) = mu(f).",
+  "outcomes": ["VERIFIED", "FALSIFIED", "BLOCKED"],
+  "pass_condition": "For all four Car outputs on all 1728 full-support states, max|Gamma c-mu| and reconstruction error are below 1e-10."
+}

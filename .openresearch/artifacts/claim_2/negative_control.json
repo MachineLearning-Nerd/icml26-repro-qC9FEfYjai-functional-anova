@@ -1,0 +1,5 @@
+{
+  "corruption": "add 1e-3 to one nonconstant coefficient after solving Gamma c=mu",
+  "max_abs_corrupted_reconstruction_error": 0.0040000000000045555,
+  "verifier_accepted": false
+}

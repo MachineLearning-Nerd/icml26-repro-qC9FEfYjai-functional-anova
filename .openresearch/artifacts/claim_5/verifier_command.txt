@@ -1,0 +1,1 @@
+.venv/bin/python repro/src/verify_mnist.py --output .openresearch/artifacts

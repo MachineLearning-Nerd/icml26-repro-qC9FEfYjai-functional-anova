@@ -1,0 +1,15 @@
+{
+  "base_revision": "6ce8ca3f9b6bd4071976f04c7b105db70e5c5e92",
+  "files": [
+    {"bytes": 2453, "path": "logbook.json", "sha256": "4776d15cdcbdb11ce852d5ab828bcb0e5464771df53fc77a6b19db08635d2eba"},
+    {"bytes": 673, "path": "pages/campaign-claim-1/page.md", "sha256": "0f0a207464017969a0553d12e8370354ad9e4c7b03e5e982763812167a2aa65f"},
+    {"bytes": 611, "path": "pages/campaign-claim-2/page.md", "sha256": "4f3999b667d9adcfcaf20aa1ca27de1ad778df6f68b56d47c1f50513819c0b1f"},
+    {"bytes": 862, "path": "pages/campaign-claim-3/page.md", "sha256": "76b6afe98d5f24b1f731b16299f92c274f22ac62fc92ff7fdd46763b4f5c2c5f"},
+    {"bytes": 675, "path": "pages/campaign-claim-4/page.md", "sha256": "d7b2589a2090e3883c13426e3e2fa406dd14ae6c3df73f4de2ed409fd9377067"},
+    {"bytes": 990, "path": "pages/campaign-claim-5/page.md", "sha256": "d1534e9ba9fafaa8b3951aa0e826c8d003afc6e563b5b89a8d1cd076bceb0286"},
+    {"bytes": 573, "path": "pages/campaign-claim-6/page.md", "sha256": "470e2d31310222b6987b4afa603ab34bff0a71fc1f3c116ffb94f4b0d9133eec"},
+    {"bytes": 957, "path": "pages/campaign-release-evidence/page.md", "sha256": "c70eab26aa525657e3a4701de428fd752c032a7fca4c555f96a8ce3fccecbb8e"}
+  ],
+  "space_id": "DineshAI/qC9FEfYjai",
+  "text_only": true
+}

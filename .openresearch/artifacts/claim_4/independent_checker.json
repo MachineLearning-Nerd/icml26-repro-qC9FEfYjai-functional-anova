@@ -1,0 +1,6 @@
+{
+  "all_reported_metrics_match_raw_recomputation": true,
+  "maximum_mse_abs_difference": 8.470329472543003e-22,
+  "maximum_r2_abs_difference": 7.416289804496046e-14,
+  "method": "recompute weighted residual MSE and R2 directly from raw component matrix, model outputs, and empirical probabilities"
+}

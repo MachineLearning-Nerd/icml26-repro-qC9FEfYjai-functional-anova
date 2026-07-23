@@ -1,0 +1,6 @@
+{
+  "corruption": "replace measured MSE with the paper value 1e-15",
+  "raw_independent_mse": 1.9673185978246495e-06,
+  "tampered_mse": 1e-15,
+  "verifier_accepted": false
+}

@@ -1,0 +1,8 @@
+{
+  "backend": "local CPU",
+  "decomposition_seconds_max": 23.06467542797327,
+  "decomposition_seconds_median": 21.413251288002357,
+  "decomposition_seconds_min": 19.15319711295888,
+  "evidence_run": "e3fac8ed-fce4-4ba7-9748-e4793d6d087d",
+  "timing_used_for_verdict": false
+}

@@ -1,0 +1,9 @@
+{
+  "claim": "Algorithm 1 yields end-to-end O(r^3) computation",
+  "falsification_condition": "A valid fixed-r support family forces official Algorithm 1 candidate evaluations to grow without bound with |E|.",
+  "outcomes": [
+    "VERIFIED",
+    "FALSIFIED",
+    "BLOCKED"
+  ]
+}

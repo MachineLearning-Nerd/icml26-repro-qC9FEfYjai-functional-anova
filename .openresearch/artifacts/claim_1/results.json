@@ -1,0 +1,11 @@
+{
+  "data_sha256": "b703a9ac69f11e64ce8c223c0a40de4d2e9d769f7fb20be5f8f2e8a619893d83",
+  "dataset": "UCI Car Evaluation full Cartesian domain",
+  "hierarchical_conditions_checked": 2660,
+  "max_abs_conditional_mean": 3.735437884936725e-16,
+  "output_classes": 4,
+  "quantifier_tested": "Every nonconstant f_A, every proper B subset A, every class, and all support configurations of X_B.",
+  "states": 1728,
+  "threshold": 1e-10,
+  "verdict": "VERIFIED"
+}

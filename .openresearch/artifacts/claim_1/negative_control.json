@@ -1,0 +1,12 @@
+{
+  "coalition_A_zero_based": [
+    0,
+    1
+  ],
+  "corruption": "add 1e-3 centered lower-order indicator to one interaction",
+  "lower_subset_B_zero_based": [
+    0
+  ],
+  "max_abs_conditional_mean": 0.0007499999999996234,
+  "verifier_accepted": false
+}
