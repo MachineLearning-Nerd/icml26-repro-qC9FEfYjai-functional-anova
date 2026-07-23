@@ -226,6 +226,10 @@ def original_row_metrics(
     responses: np.ndarray,
     reconstruction: np.ndarray,
 ) -> dict:
+    # Torch inference returns float32.  NumPy otherwise accumulates the mean of
+    # the 60,000 expanded rows in float32, which is not an independent
+    # double-precision check of the support-weighted calculation.
+    responses = np.asarray(responses, dtype=np.float64)
     lookup = {row.tobytes(): index for index, row in enumerate(patterns)}
     inverse = np.fromiter(
         (lookup[row.tobytes()] for row in x_encoded),
@@ -237,7 +241,10 @@ def original_row_metrics(
     mean = np.mean(responses[inverse], axis=0)
     variance = np.mean((responses[inverse] - mean) ** 2, axis=0)
     return {
-        "method": "unweighted direct residuals expanded over all 60000 training rows",
+        "method": (
+            "unweighted float64 residuals and variance expanded over all "
+            "60000 training rows"
+        ),
         "mse": [float(value) for value in mse],
         "r2": [float(value) for value in (1.0 - mse / variance)],
     }
