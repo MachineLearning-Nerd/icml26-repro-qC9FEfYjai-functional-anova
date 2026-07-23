@@ -222,8 +222,8 @@ def original_row_metrics(
     variance = np.mean((responses[inverse] - mean) ** 2, axis=0)
     return {
         "method": "unweighted direct residuals expanded over all 60000 training rows",
-        "mse": mse,
-        "r2": 1.0 - mse / variance,
+        "mse": [float(value) for value in mse],
+        "r2": [float(value) for value in (1.0 - mse / variance)],
     }
 
 
