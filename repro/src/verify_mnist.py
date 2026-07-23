@@ -56,9 +56,25 @@ class BinarizedMnistMlp(nn.Module):
         return self.model(self.flatten(values))
 
 
+def json_default(value: object):
+    if isinstance(value, np.ndarray):
+        return value.tolist()
+    if isinstance(value, np.generic):
+        return value.item()
+    raise TypeError(f"not JSON serializable: {type(value)!r}")
+
+
 def write_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n")
+    path.write_text(
+        json.dumps(
+            value,
+            indent=2,
+            sort_keys=True,
+            default=json_default,
+        )
+        + "\n"
+    )
 
 
 def hash_dataset_files(root: Path) -> list[dict]:
