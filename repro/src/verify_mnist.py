@@ -192,6 +192,10 @@ def solve_metrics(
     probabilities: np.ndarray,
     responses: np.ndarray,
 ) -> tuple[np.ndarray, np.ndarray, dict]:
+    # Torch inference returns float32.  Promote before all moment calculations
+    # so squaring cannot silently occur in float32 and so the support-weighted
+    # metrics agree with an expanded-row float64 calculation.
+    responses = np.asarray(responses, dtype=np.float64)
     started = time.perf_counter()
     gamma = matrix.T @ (probabilities[:, None] * matrix)
     mu = matrix.T @ (probabilities[:, None] * responses)
@@ -206,7 +210,7 @@ def solve_metrics(
     reconstruction = matrix @ coefficients
     residual = reconstruction - responses
     mean = probabilities @ responses
-    variance = probabilities @ (responses**2) - mean**2
+    variance = probabilities @ ((responses - mean) ** 2)
     mse = probabilities @ (residual**2)
     r2 = 1.0 - mse / variance
     relative = mse / (probabilities @ (responses**2))

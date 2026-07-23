@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ARTIFACTS = ROOT / ".openresearch" / "artifacts"
 sys.path.insert(0, str(ROOT / "repro" / "src"))
 
-from verify_mnist import original_row_metrics  # noqa: E402
+from verify_mnist import original_row_metrics, solve_metrics  # noqa: E402
 
 
 def test_original_row_checker_accumulates_float32_responses_in_float64():
@@ -37,6 +37,25 @@ def test_original_row_checker_accumulates_float32_responses_in_float64():
     assert observed["mse"][0] == pytest.approx(expected_mse, abs=1e-15)
     assert observed["r2"][0] == pytest.approx(
         1.0 - expected_mse / expected_variance, abs=1e-12
+    )
+
+
+def test_primary_metrics_promote_float32_responses_before_squaring():
+    matrix = np.ones((2, 1), dtype=np.float64)
+    probabilities = np.asarray([59_999 / 60_000, 1 / 60_000], dtype=np.float64)
+    responses = np.asarray([[0.12345679], [0.9876543]], dtype=np.float32)
+
+    reconstruction, _, observed = solve_metrics(
+        matrix, probabilities, responses
+    )
+    promoted = responses.astype(np.float64)
+    expected_mse = probabilities @ ((reconstruction - promoted) ** 2)
+    expected_mean = probabilities @ promoted
+    expected_variance = probabilities @ ((promoted - expected_mean) ** 2)
+
+    assert observed["mse"][0] == pytest.approx(expected_mse[0], abs=1e-15)
+    assert observed["r2"][0] == pytest.approx(
+        1.0 - expected_mse[0] / expected_variance[0], abs=1e-12
     )
 
 
