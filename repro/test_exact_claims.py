@@ -37,6 +37,20 @@ def test_claim_1_independent_checker_and_negative_control(exact_claims):
     assert not exact_claims["1"]["negative_control"]["verifier_accepted"]
 
 
+def test_claim_2_full_support_gamma_linear_system(exact_claims):
+    result = exact_claims["2"]["result"]
+    assert result["verdict"] == "VERIFIED"
+    assert result["basis_shape"] == [1728, 1728]
+    assert result["systems_solved"] == 4
+    assert result["max_abs_gamma_c_minus_mu"] < 1e-10
+    assert result["max_abs_reconstruction_error"] < 1e-10
+
+
+def test_claim_2_independent_checker_and_negative_control(exact_claims):
+    assert exact_claims["2"]["independent_checker"]["accepted"]
+    assert not exact_claims["2"]["negative_control"]["verifier_accepted"]
+
+
 def test_claim_3_fixed_r_counterexample(exact_claims):
     result = exact_claims["3"]["result"]
     assert result["verdict"] == "FALSIFIED"

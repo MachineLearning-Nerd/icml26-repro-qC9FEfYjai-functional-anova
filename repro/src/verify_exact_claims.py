@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Direct, full-scale contracts for paper claims 1, 3, and 6.
+"""Direct, full-scale contracts for paper claims 1, 2, 3, and 6.
 
 The CLI writes durable evidence and returns nonzero unless every direct check,
 independent checker, and negative control behaves as specified.
@@ -170,6 +170,128 @@ def verify_claim_1(
         "lower_subset_B_zero_based": b,
         "max_abs_conditional_mean": corrupted_error,
         "verifier_accepted": corrupted_error < TOLERANCE,
+    }
+    return result, independent, negative
+
+
+def verify_claim_2(
+    support: np.ndarray,
+    predictions: np.ndarray,
+    cardinalities: np.ndarray,
+) -> tuple[dict, dict, dict]:
+    probabilities = np.full(len(support), 1.0 / len(support))
+    builder = FullSupportAnova(
+        cardinalities,
+        probabilities,
+        lambda values: np.zeros(len(values)),
+    )
+    base = builder._build_base_matrix()
+
+    started = time.perf_counter()
+    gamma = base.T @ (probabilities[:, None] * base)
+    mu = base.T @ (probabilities[:, None] * predictions)
+    coefficients = np.linalg.solve(gamma, mu)
+    solve_seconds = time.perf_counter() - started
+    reconstruction = base @ coefficients
+    equation_residual = gamma @ coefficients - mu
+
+    direct_coefficients = np.linalg.solve(base, predictions)
+    direct_reconstruction = base @ direct_coefficients
+    class_rows = []
+    for class_id in range(predictions.shape[1]):
+        class_rows.append(
+            {
+                "class_id": class_id,
+                "gamma_equation_max_abs_residual": float(
+                    np.max(np.abs(equation_residual[:, class_id]))
+                ),
+                "gamma_reconstruction_max_abs_error": float(
+                    np.max(
+                        np.abs(
+                            reconstruction[:, class_id]
+                            - predictions[:, class_id]
+                        )
+                    )
+                ),
+                "direct_base_reconstruction_max_abs_error": float(
+                    np.max(
+                        np.abs(
+                            direct_reconstruction[:, class_id]
+                            - predictions[:, class_id]
+                        )
+                    )
+                ),
+                "gamma_vs_direct_coefficient_max_abs_difference": float(
+                    np.max(
+                        np.abs(
+                            coefficients[:, class_id]
+                            - direct_coefficients[:, class_id]
+                        )
+                    )
+                ),
+            }
+        )
+
+    maximum_reconstruction_error = max(
+        row["gamma_reconstruction_max_abs_error"] for row in class_rows
+    )
+    maximum_equation_residual = max(
+        row["gamma_equation_max_abs_residual"] for row in class_rows
+    )
+    maximum_direct_error = max(
+        row["direct_base_reconstruction_max_abs_error"] for row in class_rows
+    )
+    maximum_coefficient_difference = max(
+        row["gamma_vs_direct_coefficient_max_abs_difference"]
+        for row in class_rows
+    )
+
+    corrupted = coefficients.copy()
+    corrupted[1, 0] += 1e-3
+    corrupted_reconstruction_error = float(
+        np.max(np.abs(base @ corrupted[:, 0] - predictions[:, 0]))
+    )
+    accepted = (
+        base.shape == (len(support), len(support))
+        and maximum_reconstruction_error < TOLERANCE
+        and maximum_equation_residual < TOLERANCE
+    )
+    result = {
+        "verdict": "VERIFIED" if accepted else "BLOCKED",
+        "dataset": "UCI Car Evaluation full Cartesian domain",
+        "states": int(len(support)),
+        "output_classes": int(predictions.shape[1]),
+        "systems_solved": int(predictions.shape[1]),
+        "basis_shape": list(base.shape),
+        "gamma_shape": list(gamma.shape),
+        "class_rows": class_rows,
+        "max_abs_gamma_c_minus_mu": maximum_equation_residual,
+        "max_abs_reconstruction_error": maximum_reconstruction_error,
+        "threshold": TOLERANCE,
+        "linear_system_seconds": solve_seconds,
+    }
+    independent = {
+        "method": (
+            "solve the square full-support basis system Bc=f directly, "
+            "without forming Gamma or mu"
+        ),
+        "max_abs_direct_reconstruction_error": maximum_direct_error,
+        "max_abs_gamma_vs_direct_coefficient_difference": (
+            maximum_coefficient_difference
+        ),
+        "accepted": (
+            maximum_direct_error < TOLERANCE
+            and maximum_coefficient_difference < TOLERANCE
+        ),
+    }
+    negative = {
+        "corruption": (
+            "add 1e-3 to one nonconstant coefficient after solving Gamma c=mu"
+        ),
+        "max_abs_corrupted_reconstruction_error": (
+            corrupted_reconstruction_error
+        ),
+        "verifier_accepted": corrupted_reconstruction_error < TOLERANCE,
     }
     return result, independent, negative
 
@@ -445,6 +567,18 @@ def write_claim_bundle(
                 "X_B configuration, abs(E[f_A|X_B]) < 1e-10."
             ),
         },
+        2: {
+            "claim": (
+                "On full support, the exact coefficient vector is obtained "
+                "from Gamma c(f) = mu(f)."
+            ),
+            "outcomes": ["VERIFIED", "FALSIFIED", "BLOCKED"],
+            "pass_condition": (
+                "For all four Car outputs on all 1728 full-support states, "
+                "a direct solve of the 1728x1728 Gamma system has both "
+                "max|Gamma c-mu| and reconstruction error below 1e-10."
+            ),
+        },
         3: {
             "claim": "Algorithm 1 yields end-to-end O(r^3) computation",
             "outcomes": ["VERIFIED", "FALSIFIED", "BLOCKED"],
@@ -470,6 +604,14 @@ def write_claim_bundle(
             "`#S2.E2`. Quantifier: every proper B subset A and every "
             "g in L²_B.\n"
         ),
+        2: (
+            "# Source audit\n\nProposition 3.10 at `#S3.Thmtheorem10` and "
+            "Equation (16) at `#S3.E16` state `Gamma c(f) = mu(f)`. The "
+            "paragraph `#S3.SS3.p2.1` states that the solution is unique iff "
+            "Gamma is invertible, i.e. in the full-support setting. Section 4 "
+            "states that the exhaustive system exactly recovers all terms for "
+            "moderate hypergrids.\n"
+        ),
         3: (
             "# Source audit\n\nAlgorithm 1 is anchored at `#alg1`; the sparse "
             "discussion and low-rank system are in Section 4. The HTML does "
@@ -494,6 +636,15 @@ def write_claim_bundle(
             "means for every lower subset. Indicator moments are an independent "
             "finite-space checker. Limitation: this verifies the published "
             "construction as implemented, not every conceivable L² function."
+        ),
+        2: (
+            "Forms the published full-support basis on the real 1728-state Car "
+            "hypergrid, constructs Gamma=B^T diag(P) B and mu=B^T diag(P) f "
+            "independently for all four class-probability functions, and solves "
+            "the four right-hand sides together. A separate direct Bc=f solve "
+            "checks both coefficients and reconstruction. Limitation: one "
+            "full-scale real categorical domain under exact product-uniform "
+            "full support."
         ),
         3: (
             "Instruments calls to the official basis evaluator without changing "
@@ -539,11 +690,17 @@ def main() -> int:
     all_outputs = {}
     for claim_id, verifier_args in [
         (1, (support, decompositions)),
+        (2, (support, predictions, cardinalities)),
         (3, ()),
         (6, (x, support, predictions, decompositions, cardinalities)),
     ]:
         started = time.perf_counter()
-        verifier = {1: verify_claim_1, 3: verify_claim_3, 6: verify_claim_6}[claim_id]
+        verifier = {
+            1: verify_claim_1,
+            2: verify_claim_2,
+            3: verify_claim_3,
+            6: verify_claim_6,
+        }[claim_id]
         result, independent, negative = verifier(*verifier_args)
         elapsed = time.perf_counter() - started
         result["data_sha256"] = data_sha
@@ -566,6 +723,7 @@ def main() -> int:
     print(json.dumps({"exact_claim_contracts": all_outputs}, indent=2))
     accepted = (
         all_outputs["1"]["result"]["verdict"] == "VERIFIED"
+        and all_outputs["2"]["result"]["verdict"] == "VERIFIED"
         and all_outputs["3"]["result"]["verdict"] == "FALSIFIED"
         and all_outputs["6"]["result"]["verdict"] == "VERIFIED"
         and all(
@@ -576,7 +734,7 @@ def main() -> int:
                     if key.startswith("verifier_accepted")
                 )
             ]
-            for claim in (1, 3, 6)
+            for claim in (1, 2, 3, 6)
         )
     )
     return 0 if accepted else 1
