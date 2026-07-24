@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Exact Functional ANOVA Decomposition",
+  "emoji": "🧮",
+  "space_id": "DineshAI/qC9FEfYjai",
+  "paper": {
+    "arxiv_id": "2603.02673",
+    "openreview_id": "qC9FEfYjai"
+  },
+  "tags": ["icml2026-repro", "paper-qC9FEfYjai"],
+  "updated_at": "2026-07-23T15:30:00+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - Exact Functional ANOVA Decomposition",
+    "file": "pages/index.md",
+    "children": [
+      {"slug": "overview", "title": "Overview", "file": "pages/overview/page.md", "children": []},
+      {"slug": "claim-1-closed-form-decomposition", "title": "Claim 1 — closed-form decomposition", "file": "pages/claim-1-closed-form-decomposition/page.md", "children": []},
+      {"slug": "claim-2-efficient-no-sampling", "title": "Claim 2 — efficient, no sampling", "file": "pages/claim-2-efficient-no-sampling/page.md", "children": []},
+      {"slug": "claim-3-non-rectangular-dependent-support", "title": "Claim 3 — non-rectangular dependent support", "file": "pages/claim-3-non-rectangular-dependent-support/page.md", "children": []},
+      {"slug": "methods-environment", "title": "Methods & environment", "file": "pages/methods-environment/page.md", "children": []},
+      {"slug": "conclusion", "title": "Conclusion", "file": "pages/conclusion/page.md", "children": []},
+      {"slug": "campaign-claim-1", "title": "Campaign Claim 1 — full-scale orthogonality", "file": "pages/campaign-claim-1/page.md", "children": []},
+      {"slug": "campaign-claim-2", "title": "Campaign Claim 2 — Gamma linear system", "file": "pages/campaign-claim-2/page.md", "children": []},
+      {"slug": "campaign-claim-3", "title": "Campaign Claim 3 — Algorithm 1 complexity", "file": "pages/campaign-claim-3/page.md", "children": []},
+      {"slug": "campaign-claim-4", "title": "Campaign Claim 4 — Mushrooms", "file": "pages/campaign-claim-4/page.md", "children": []},
+      {"slug": "campaign-claim-5", "title": "Campaign Claim 5 — MNIST", "file": "pages/campaign-claim-5/page.md", "children": []},
+      {"slug": "campaign-claim-6", "title": "Campaign Claim 6 — exact SHAP recovery", "file": "pages/campaign-claim-6/page.md", "children": []},
+      {"slug": "campaign-release-evidence", "title": "Campaign release evidence", "file": "pages/campaign-release-evidence/page.md", "children": []}
+    ]
+  },
+  "agent_view_tokens": 9000,
+  "revision": "campaign-release-candidate-20260723"
+}
