@@ -1,0 +1,20 @@
+{
+  "paper": "qC9FEfYjai",
+  "space_id": "DineshAI/qC9FEfYjai",
+  "previous_judged_revision": "6ce8ca3f9b6bd4071976f04c7b105db70e5c5e92",
+  "published_revision": "921044bf0219e121c4574f72fdfd65c500e95658",
+  "publication_status": "awaiting_judge",
+  "published_at": "2026-07-24T06:03:01Z",
+  "live_judged_score_at_publication": "3/12",
+  "score_increase_claimed": false,
+  "uploaded_text_files": 8,
+  "delete_operations": 0,
+  "remote_file_count": 26,
+  "post_upload_hash_verification": "PASS",
+  "protected_file_set_is_subset": true,
+  "unchanged_protected_files_hash_verified": 18,
+  "scientific_git_sha": "4b3a0670f7caa28c84599e884ceeb9d77981f23d",
+  "initial_git_mirror_sha": "f5b27fcbd26e69700c48d3ea8d25e68c97c5e4f2",
+  "cumulative_run_id": "ad3897e1-589b-4eac-b902-b81b60c41a31",
+  "cumulative_test_result": "27 passed in 16141.26s (4:29:01)"
+}
